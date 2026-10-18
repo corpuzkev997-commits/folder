@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark Kevin Corpuz | Portfolio</title>
+
+<style>
+:root {
+  --navy: #071426;
+  --blue: #1675ef;
+  --cyan: #68d5ff;
+  --white: #f4f8ff;
+  --muted: #b9c9de;
+  --card: #102642;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  background: #061020;
+  border-bottom: 2px solid var(--blue);
+  padding: 16px 7%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  color: var(--cyan);
+}
+
+nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a:hover {
+  color: var(--cyan);
+}
+
+section {
+  padding: 75px 9%;
+  scroll-margin-top: 75px;
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 85% 25%, #1457a1 0, transparent 32%),
+    linear-gradient(135deg, #071426, #0a2850);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  border: 1px solid #2879c5;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 70px);
+  line-height: 1.12;
+  margin-bottom: 20px;
+}
+
+h1 span, .blue {
+  color: var(--cyan);
+}
+
+.hero p, .intro {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 700px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--blue);
+  padding: 11px 20px;
+  border-radius: 7px;
+  margin: 20px 8px 0 0;
+  font-weight: bold;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--cyan);
+}
+
+.btn:hover {
+  background: #3595ff;
+}
+
+.minecraft {
+  position: absolute;
+  right: 7%;
+  bottom: 9%;
+  font-size: 54px;
+  opacity: .85;
+  filter: drop-shadow(0 8px 12px #0008);
+}
+
+.camera-sticker {
+  position: absolute;
+  right: 12%;
+  top: 18%;
+  font-size: 50px;
+  transform: rotate(12deg);
+}
+
+.section-title {
+  font-size: clamp(29px, 4vw, 40px);
+  margin-bottom: 12px;
+}
+
+.intro {
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #24476f;
+  padding: 25px;
+  border-radius: 14px;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+}
+
+.card h3 {
+  color: var(--cyan);
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.card p, .card li {
+  color: var(--muted);
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.profile {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 5px solid var(--cyan);
+  object-fit: cover;
+  display: block;
+  margin-bottom: 24px;
+  background: #15365e;
+}
+
+.timeline {
+  border-left: 3px solid var(--blue);
+  padding-left: 23px;
+  display: grid;
+  gap: 25px;
+}
+
+.timeline h3 {
+  color: var(--cyan);
+}
+
+.timeline p {
+  color: var(--muted);
+}
+
+.resume-frame {
+  background: #fff;
+  color: #18263a;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 700px;
+}
+
+.resume-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.thanks {
+  background: linear-gradient(135deg, #103b70, #102642);
+  border: 1px solid #3478bd;
+  padding: 30px;
+  border-radius: 15px;
+  color: var(--muted);
+}
+
+.thanks strong {
+  color: var(--cyan);
+}
+
+.pixel-label {
+  display: inline-block;
+  border: 2px solid var(--cyan);
+  padding: 7px 12px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 4px 4px 0 #030914;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 7%;
+  background: #040a14;
+  border-top: 2px solid var(--blue);
+  color: var(--muted);
+}
+
+footer strong {
+  color: var(--cyan);
+}
+
+@media(max-width: 700px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-sticker {
+    right: 7%;
+    top: 7%;
+    font-size: 35px;
+  }
+
+  .minecraft {
+    font-size: 38px;
+    right: 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="logo">MKC. 📸</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#scouting">Scouting</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#thanks">Thanks</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="camera-sticker">📸</div>
+  <div class="hero-content">
+    <div class="eyebrow">STUDENT PORTFOLIO • 2026–2027</div>
+
+    <!-- Replace profile.jpg with your actual picture -->
+    <img src="profile.jpg" alt="Mark Kevin Corpuz profile picture"
+         class="profile"
+         onerror="this.style.display='none'">
+
+    <h1>Hi, I'm<br><span>Mark Kevin Corpuz</span></h1>
+
+    <p>
+      Senior High School student at Utan Integrated School.
+      A festival dancer, photographer, videographer, and editor
+      who believes that every challenge is a chance to grow.
+    </p>
+
+    <a class="btn" href="#about">Explore My Portfolio</a>
+    <a class="btn outline" href="#resume">View My Resume</a>
+  </div>
+  <div class="minecraft">⛏️ 🟩</div>
+</section>
+
+<section id="about">
+  <div class="pixel-label">PLAYER PROFILE ⛏️</div>
+  <h2 class="section-title">About <span class="blue">Me</span></h2>
+  <p class="intro">
+    My story is about determination, faith, learning, and working
+    hard for the future I dream of.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>📘 My Background</h3>
+      <p>
+        I am Mark Kevin Corpuz, a Senior High School student at
+        Utan Integrated School. I was an academic achiever during
+        Junior High School. It was not always easy, but I kept
+        going because I want to finish my studies and help my family.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>📸 My Interests</h3>
+      <ul>
+        <li>Festival dancing</li>
+        <li>Photography and photojournalism</li>
+        <li>Videography and editing</li>
+        <li>Computers and digital creativity</li>
+        <li>Scouting, teamwork, and learning new skills</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="pixel-label">ACHIEVEMENT UNLOCKED 🏆</div>
+  <h2 class="section-title">My Photojournalism <span class="blue">Journey</span></h2>
+  <p class="intro">
+    Every competition has taught me to keep practicing, learn from
+    mistakes, and never give up on my dreams.
+  </p>
+
+  <div class="timeline">
+    <div>
+      <h3>📷 Grade 9 — Piat, Cagayan</h3>
+      <p>
+        I joined photojournalism for the first time. I did not place,
+        but I continued because I wanted to improve my skills.
+      </p>
+    </div>
+
+    <div>
+      <h3>🏅 Grade 10 — Sanchez Mira</h3>
+      <p>
+        I joined another competition and earned 10th place.
+        This achievement motivated me to continue learning.
+      </p>
+    </div>
+
+    <div>
+      <h3>📰 Buguey, Cagayan — DSPC</h3>
+      <p>
+        I continued participating in school press conference events.
+        I was fortunate to be the only winner from our group in Buguey.
+        That experience inspired me to train harder.
+      </p>
+    </div>
+
+    <div>
+      <h3>🎯 My Next Goal — Solana, Cagayan</h3>
+      <p>
+        I am preparing for the upcoming Division Schools Press Conference.
+        I hope to qualify for the Regional Schools Press Conference
+        and represent my school with pride.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2 class="section-title">My <span class="blue">Achievements</span></h2>
+  <p class="intro">Small steps, big lessons, and memories I will always value.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🎓 Academic Achiever</h3>
+      <p>
+        I worked hard during Junior High School. Even when school
+        became difficult, I kept going for the sake of my future.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>📸 Photojournalism — 10th Place</h3>
+      <p>
+        My placement in Sanchez Mira, Cagayan, became an important
+        milestone in my journey as a student photojournalist.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>💃 Festival Dance — 1st Runner-Up</h3>
+      <p>
+        I joined a festival dance competition in Allacapan, Cagayan,
+        where our group achieved first runner-up. It taught me teamwork
+        and dedication.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🌟 My Future Goals</h3>
+      <p>
+        I want to improve my talents, continue my education, qualify
+        for regional competitions, make my family proud, and help them
+        have a better future.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="scouting">
+  <div class="pixel-label">SCOUT MODE: ACTIVE ⚜️</div>
+  <h2 class="section-title">My Boy Scout <span class="blue">Journey</span></h2>
+  <p class="intro">
+    Scouting has given me meaningful experiences and taught me
+    discipline, teamwork, service, and friendship.
+  </p>
+
+  <div class="timeline">
+    <div>
+      <h3>⚜️ From Childhood to Grade 8</h3>
+      <p>
+        I started scouting when I was young. Our activities stopped
+        during the COVID-19 pandemic, but I continued my scouting
+        journey when I reached Grade 8.
+      </p>
+    </div>
+
+    <div>
+      <h3>🏕️ Provincial Jamboree — Matucay</h3>
+      <p>
+        I joined a Provincial Jamboree in Matucay, Allacapan, Cagayan,
+        and experienced learning and teamwork with fellow Scouts.
+      </p>
+    </div>
+
+    <div>
+      <h3>🏕️ Provincial Jamboree — Piat</h3>
+      <p>
+        During Grade 9, I joined another Provincial Jamboree in Piat,
+        Cagayan, adding another memorable experience to my scouting life.
+      </p>
+    </div>
+
+    <div>
+      <h3>🌏 33rd Asia-Pacific Regional Scout Jamboree</h3>
+      <p>
+        On December 10, 2025, while I was in Grade 10, I participated
+        in the 33rd Asia-Pacific Regional Scout Jamboree in Botolan,
+        Zambales. It was a special milestone for me.
+      </p>
+    </div>
+
+    <div>
+      <h3>🏕️ Provincial Jamboree — Ballesteros</h3>
+      <p>
+        After that regional jamboree, I joined another Provincial
+        Jamboree in Ballesteros, Cagayan. I look forward to future
+        scouting adventures and opportunities to serve.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <h2 class="section-title">My <span class="blue">Resume</span></h2>
+  <p class="intro">
+    My resume contains information about my education, interests,
+    and experiences.
+  </p>
+
+  <div class="resume-frame">
+    <!-- Put your resume image in this folder and name it resume.jpg -->
+    <img src="resume.jpg"
+         alt="Mark Kevin Corpuz resume"
+         onerror="this.style.display='none'">
+    <p id="resume-message" style="padding:15px; text-align:center;">
+      Add your resume picture and name it <b>resume.jpg</b>
+      to display it here.
+    </p>
+  </div>
+</section>
+
+<section id="thanks">
+  <h2 class="section-title">My Heartfelt <span class="blue">Gratitude</span></h2>
+
+  <div class="thanks">
+    I would like to thank my parents, <strong>Glenn T. Corpuz and
+    Charry R. Corpuz</strong>, for their love, sacrifices, guidance,
+    and endless support.
+
+    <br><br>
+
+    To my brother, <strong>Mark Kenneth R. Corpuz</strong>, and my
+    aunts and uncles, thank you for always encouraging me and believing
+    in what I can do.
+
+    <br><br>
+
+    To <strong>Potetoo</strong>, thank you for your support. I appreciate
+    the encouragement you have given me.
+
+    <br><br>
+
+    Above all, I give my greatest thanks to <strong>Jesus, my Savior</strong>,
+    for guiding me, giving me strength, and staying with me through
+    every challenge. My journey is not always easy, but I will continue
+    to work hard, trust God's plan, and do my best for my future.
+
+    <br><br>
+
+    <strong>Maraming-maraming salamat po sa inyong lahat! 💙🙏</strong>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2 class="section-title">My Motto <span class="blue">✨</span></h2>
+    <p>
+      "Keep learning, keep believing, and never give up on the future
+      you are working for. With faith in God and hard work, every
+      experience can help you grow."
+    </p>
+    <br>
+    <p class="blue">📸 Capture moments. ⛏️ Build dreams. ⚜️ Serve with heart.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>MARK KEVIN CORPUZ</strong></p>
+  <p>Senior High School Student | Utan Integrated School</p>
+  <p>Made with passion, creativity, and faith. 💙</p>
+  <p>© 2026 Mark Kevin Corpuz</p>
+</footer>
+
+</body>
+</html>
